@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Support Ticketing UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h2>Support Tickets</h2>
+      <div class="filters">
+        <input type="text" placeholder="Search tickets..." />
+        <select>
+          <option>All Status</option>
+          <option>Open</option>
+          <option>In Progress</option>
+          <option>Resolved</option>
+          <option>Closed</option>
+        </select>
+        <select>
+          <option>All Priority</option>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+          <option>Urgent</option>
+        </select>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="ticket-list">
+        <div class="ticket active">
+          <div class="ticket-header">
+            <h4>#1024 – Login Issue</h4>
+            <span class="priority high">High</span>
+          </div>
+          <p class="preview">User unable to log in after password reset...</p>
+          <div class="meta">
+            <span class="status open">Open</span>
+            <span class="time">5m ago</span>
+          </div>
+        </div>
+
+        <div class="ticket">
+          <div class="ticket-header">
+            <h4>#1025 – Appointment not syncing</h4>
+            <span class="priority medium">Medium</span>
+          </div>
+          <p class="preview">
+            Doctor appointments not showing in patient portal...
+          </p>
+          <div class="meta">
+            <span class="status progress">In Progress</span>
+            <span class="time">15m ago</span>
+          </div>
+        </div>
+
+        <div class="ticket">
+          <div class="ticket-header">
+            <h4>#1026 – Payment confirmation</h4>
+            <span class="priority low">Low</span>
+          </div>
+          <p class="preview">Requesting invoice for previous payment...</p>
+          <div class="meta">
+            <span class="status resolved">Resolved</span>
+            <span class="time">1h ago</span>
+          </div>
+        </div>
+      </aside>
+
+      <section class="conversation">
+        <header class="conv-header">
+          <h3>Ticket #1024 – Login Issue</h3>
+          <span class="status open">Open</span>
+        </header>
+
+        <div class="messages">
+          <div class="msg from-user">
+            <p>Hi, I reset my password but still can’t log in.</p>
+            <span class="time">09:30 AM</span>
+          </div>
+          <div class="msg from-agent">
+            <p>
+              Hello! I’m checking this now. Have you tried clearing your cache?
+            </p>
+            <span class="time">09:32 AM</span>
+          </div>
+          <div class="msg from-user">
+            <p>Yes, same issue persists.</p>
+            <span class="time">09:35 AM</span>
+          </div>
+        </div>
+
+        <footer class="reply">
+          <input type="text" placeholder="Type your message..." />
+          <button>Send</button>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

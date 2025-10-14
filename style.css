@@ -1,0 +1,277 @@
+:root {
+  --bg: #f6f8fb;
+  --white: #fff;
+  --primary: #2563eb;
+  --gray: #64748b;
+  --green: #16a34a;
+  --red: #dc2626;
+  --orange: #f97316;
+  --yellow: #eab308;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+body {
+  background: var(--bg);
+  color: #0f172a;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--white);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.filters {
+  display: flex;
+  gap: 0.75rem;
+}
+.filters input,
+.filters select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.main {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+.ticket-list {
+  width: 35%;
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 1rem;
+}
+.ticket {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: 0.2s;
+}
+.ticket:hover,
+.ticket.active {
+  background: #f0f6ff;
+  border-color: #bfdbfe;
+}
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ticket-header h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.preview {
+  color: var(--gray);
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+.priority {
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: white;
+}
+.priority.low {
+  background: var(--green);
+}
+.priority.medium {
+  background: var(--yellow);
+}
+.priority.high {
+  background: var(--orange);
+}
+.priority.urgent {
+  background: var(--red);
+}
+
+.status {
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: white;
+}
+.status.open {
+  background: var(--primary);
+}
+.status.progress {
+  background: var(--yellow);
+  color: #000;
+}
+.status.resolved {
+  background: var(--green);
+}
+.status.closed {
+  background: var(--gray);
+}
+
+.conversation {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+}
+.conv-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.messages {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.msg {
+  max-width: 70%;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: #f1f5f9;
+  position: relative;
+}
+.msg.from-agent {
+  align-self: flex-start;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+.msg.from-user {
+  align-self: flex-end;
+  background: #e0f2fe;
+  border: 1px solid #7dd3fc;
+}
+.msg .time {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.7rem;
+  color: var(--gray);
+  text-align: right;
+}
+
+.reply {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.reply input {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+.reply button {
+  background: var(--primary);
+  border: none;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.reply button:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 900px) {
+  .ticket-list {
+    width: 100%;
+    height: 40%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .conversation {
+    height: 60%;
+  }
+  .main {
+    flex-direction: column;
+  }
+}
+For
+  tablets
+  and
+  medium
+  screens
+  (below 1240px)
+  */
+  @media
+  screen
+  and
+  (max-width: 1240px) {
+  .ticket-dashboard {
+    gap: 16px;
+  }
+
+  .sidebar {
+    padding: 16px;
+  }
+
+  .ticket-list {
+    padding: 16px;
+  }
+
+  .ticket {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .priority-label {
+    margin-top: 8px;
+  }
+}
+
+/* For mobile screens (below 480px) */
+@media screen and (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .ticket-list {
+    padding: 12px;
+  }
+
+  .ticket {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .priority-label {
+    font-size: 11px;
+  }
+
+  .status {
+    font-size: 12px;
+  }
+
+  .conversation-preview {
+    font-size: 13px;
+  }
+}
